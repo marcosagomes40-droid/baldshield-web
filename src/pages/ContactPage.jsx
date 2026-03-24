@@ -1,30 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { Mail, Instagram, Users, Clock } from 'lucide-react';
+import { Mail, Instagram, Users, Clock, Facebook } from 'lucide-react';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import ContactForm from '@/components/ContactForm.jsx';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { useToast } from '@/hooks/use-toast';
 
 const ContactPage = () => {
+  const [waitlistEmail, setWaitlistEmail] = useState('');
+  const { toast } = useToast();
+
+  const handleWaitlistSubmit = (e) => {
+    e.preventDefault();
+    if (waitlistEmail) {
+      toast({
+        title: 'Inscrição realizada',
+        description: 'Você entrou na lista de espera da BaldShield.',
+      });
+      setWaitlistEmail('');
+    }
+  };
+
   const contactInfo = [
     {
       icon: Mail,
       title: 'E-mail',
-      details: 'support@baldshield.com',
-      link: 'mailto:support@baldshield.com',
+      details: 'mgomes@baldshield.com',
+      link: 'mailto:mgomes@baldshield.com',
     },
     {
       icon: Instagram,
       title: 'Instagram',
+      details: '@baldshield.br',
+      link: 'https://instagram.com/baldshield.br',
+    },
+    {
+      icon: Facebook,
+      title: 'Facebook',
       details: '@baldshield',
-      link: 'https://instagram.com',
+      link: 'https://facebook.com/baldshield',
     },
     {
       icon: Users,
-      title: 'Parcerias e comercial',
-      details: 'Fale com a equipe BaldShield para oportunidades de parceria e lançamento.',
-      link: 'mailto:support@baldshield.com',
+      title: 'TikTok',
+      details: '@baldshield',
+      link: 'https://tiktok.com/@baldshield',
     },
     {
       icon: Clock,
@@ -40,7 +63,7 @@ const ContactPage = () => {
         <title>Contato BaldShield | Fale com a Nossa Equipe</title>
         <meta
           name="description"
-          content="Entre em contato com a BaldShield para dúvidas, lançamento, lista de espera e oportunidades de parceria."
+          content="Entre em contato com a BaldShield, acompanhe o lançamento, siga nossas redes sociais e entre na lista de espera."
         />
         <link rel="canonical" href="https://www.baldshield.com/contact" />
       </Helmet>
@@ -48,7 +71,7 @@ const ContactPage = () => {
       <div className="min-h-screen bg-black">
         <Header />
 
-        {/* Hero Section */}
+        {/* Hero */}
         <section className="py-20 bg-gradient-to-b from-black to-card">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -76,11 +99,12 @@ const ContactPage = () => {
           </div>
         </section>
 
-        {/* Contact Section */}
+        {/* Conteúdo */}
         <section className="py-20 bg-card">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-              {/* Contact Form */}
+              
+              {/* Formulário */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -101,7 +125,7 @@ const ContactPage = () => {
                 <ContactForm />
               </motion.div>
 
-              {/* Contact Information */}
+              {/* Contatos + redes + lista */}
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -118,7 +142,7 @@ const ContactPage = () => {
 
                   <p className="text-muted-foreground mb-8">
                     Prefere falar diretamente? Aqui estão os principais canais
-                    para entrar em contato com a BaldShield.
+                    para entrar em contato e acompanhar a BaldShield.
                   </p>
                 </div>
 
@@ -134,6 +158,7 @@ const ContactPage = () => {
                       <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                         <info.icon className="w-6 h-6 text-primary" />
                       </div>
+
                       <div>
                         <h3 className="text-lg font-semibold text-foreground mb-1">
                           {info.title}
@@ -156,20 +181,37 @@ const ContactPage = () => {
                   ))}
                 </div>
 
-                {/* Additional Info */}
-                <div className="bg-primary/10 border border-primary/20 rounded-xl p-6 mt-8">
+                {/* Lista de espera */}
+                <div className="bg-primary/10 border border-primary/20 rounded-xl p-6">
                   <h3
-                    className="text-xl font-semibold text-foreground mb-3"
+                    className="text-2xl font-semibold text-foreground mb-3"
                     style={{ fontFamily: 'Playfair Display, serif' }}
                   >
-                    Quer acompanhar o lançamento?
+                    Entre na lista de espera
                   </h3>
 
-                  <p className="text-muted-foreground">
-                    Você também pode entrar para a lista de espera e acompanhar
-                    as novidades da BaldShield pelo Instagram e pelos nossos
-                    canais oficiais.
+                  <p className="text-muted-foreground mb-5">
+                    Receba novidades sobre o lançamento da BaldShield e seja um
+                    dos primeiros a acompanhar a marca.
                   </p>
+
+                  <form onSubmit={handleWaitlistSubmit} className="flex flex-col sm:flex-row gap-3">
+                    <Input
+                      type="email"
+                      placeholder="Seu e-mail"
+                      value={waitlistEmail}
+                      onChange={(e) => setWaitlistEmail(e.target.value)}
+                      required
+                      className="bg-black border-border text-foreground placeholder:text-muted-foreground"
+                    />
+
+                    <Button
+                      type="submit"
+                      className="bg-primary hover:bg-primary/90 text-white font-semibold"
+                    >
+                      Entrar na lista
+                    </Button>
+                  </form>
                 </div>
               </motion.div>
             </div>

@@ -11,64 +11,73 @@ const BenefitsPage = () => {
   const benefits = [
     {
       icon: Shield,
-      title: 'Superior UV Protection',
-      description: 'Our advanced SPF 50+ formula provides broad-spectrum protection against both UVA and UVB rays. Shields your scalp from sunburn, premature aging, and reduces the risk of skin damage from prolonged sun exposure.',
+      title: 'Proteção UV avançada',
+      description: 'Fórmula FPS 50+ desenvolvida para proteger o couro cabeludo contra os raios UVA e UVB, ajudando a prevenir queimaduras, envelhecimento precoce e danos causados pela exposição solar.',
     },
     {
       icon: Droplet,
-      title: 'Long-Lasting Water Resistance',
-      description: 'Engineered to stay effective for up to 80 minutes in water. Perfect for swimming, surfing, or any water-based activities. Maintains protection even when you sweat during intense outdoor workouts.',
+      title: 'Resistente à água',
+      description: 'Mantém a proteção mesmo durante atividades ao ar livre, suor intenso ou contato com água. Ideal para esportes, praia e uso no dia a dia.',
     },
     {
       icon: Sparkles,
-      title: 'Premium Non-Greasy Formula',
-      description: 'Lightweight texture that absorbs quickly without leaving any sticky or oily residue. Comfortable to wear all day long, whether you are at work, exercising, or enjoying outdoor activities.',
+      title: 'Toque seco e confortável',
+      description: 'Textura leve, rápida absorção e sem oleosidade. Desenvolvido para uso diário sem desconforto ou brilho excessivo no couro cabeludo.',
     },
     {
       icon: Award,
-      title: 'Dermatologist Tested & Approved',
-      description: 'Clinically tested and recommended by dermatologists worldwide. Hypoallergenic formula suitable for sensitive skin. Free from harsh chemicals, parabens, and artificial fragrances.',
+      title: 'Testado dermatologicamente',
+      description: 'Fórmula segura e adequada para o couro cabeludo, inclusive em peles sensíveis. Desenvolvido com foco em proteção e segurança.',
     },
     {
       icon: Heart,
-      title: 'Scalp Health & Nourishment',
-      description: 'Enriched with vitamins and antioxidants that nourish your scalp while protecting it. Helps maintain healthy skin barrier function and prevents dryness. Gentle enough for daily use.',
+      title: 'Cuidado com o couro cabeludo',
+      description: 'Além de proteger, ajuda a manter a saúde da pele, prevenindo ressecamento e desconforto causados pela exposição ao sol.',
     },
   ];
 
   return (
     <>
       <Helmet>
-        <title>Benefits - Why Choose BaldShield Sun Protection</title>
+        <title>Benefícios BaldShield | Proteção para Couro Cabeludo</title>
         <meta
           name="description"
-          content="Discover the benefits of BaldShield's premium scalp protection. SPF 50+, water-resistant, dermatologist tested, and designed for bald heads."
+          content="Conheça os benefícios do BaldShield: proteção FPS 50+, toque seco, resistência à água e cuidado com o couro cabeludo de homens carecas."
         />
+        <link rel="canonical" href="https://www.baldshield.com/benefits" />
       </Helmet>
 
       <div className="min-h-screen bg-black">
         <Header />
 
-        {/* Hero Section */}
+        {/* Hero */}
         <section className="py-20 bg-gradient-to-b from-black to-card">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
-                The BaldShield Advantage
+              <p className="text-base md:text-lg uppercase tracking-[0.5em] text-primary font-semibold mb-8">
+                BENEFÍCIOS
+              </p>
+
+              <h1
+                className="text-5xl md:text-6xl font-bold text-foreground mb-6"
+                style={{ fontFamily: 'Playfair Display, serif' }}
+              >
+                Por que usar BaldShield
               </h1>
-              <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
-                Discover why thousands of people trust BaldShield for premium scalp protection. Our formula combines cutting-edge science with premium ingredients.
+
+              <p className="text-xl text-secondary max-w-2xl mx-auto leading-relaxed">
+                Desenvolvido especialmente para o couro cabeludo de homens carecas, combinando proteção, conforto e desempenho para o dia a dia.
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Benefits Grid */}
+        {/* Grid */}
         <section className="py-20 bg-card">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
@@ -82,8 +91,7 @@ const BenefitsPage = () => {
                 />
               ))}
             </div>
-            
-            {/* Full-width benefit card */}
+
             <div className="max-w-4xl mx-auto">
               <BenefitCard
                 icon={benefits[4].icon}
@@ -95,14 +103,14 @@ const BenefitsPage = () => {
           </div>
         </section>
 
-        {/* Stats Section */}
+        {/* Stats */}
         <section className="py-20 bg-gradient-to-b from-card to-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
               {[
-                { value: '50+', label: 'SPF Protection' },
-                { value: '80min', label: 'Water Resistant' },
-                { value: '4,827', label: 'Happy Customers' },
+                { value: '50+', label: 'FPS de proteção' },
+                { value: '80min', label: 'Resistente à água' },
+                { value: '100%', label: 'Foco em couro cabeludo' },
               ].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -112,10 +120,12 @@ const BenefitsPage = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="text-center"
                 >
-                  <div className="text-5xl md:text-6xl font-bold text-primary mb-3" style={{ fontFamily: 'Playfair Display, serif', fontVariantNumeric: 'tabular-nums' }}>
+                  <div className="text-5xl md:text-6xl font-bold text-primary mb-3">
                     {stat.value}
                   </div>
-                  <p className="text-lg text-secondary font-medium">{stat.label}</p>
+                  <p className="text-lg text-secondary font-medium">
+                    {stat.label}
+                  </p>
                 </motion.div>
               ))}
             </div>

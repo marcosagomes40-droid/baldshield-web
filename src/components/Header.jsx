@@ -34,7 +34,7 @@ const Header = () => {
               <img
                 src="https://horizons-cdn.hostinger.com/0dff2f89-11ee-409c-8d36-778d795a7ee2/03fdbaa1ddb7eb55c809079def39aafb.png"
                 alt="BaldShield Logo"
-                className="h-20 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+                className="h-25 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
               />
             </Link>
 

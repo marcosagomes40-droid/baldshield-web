@@ -47,15 +47,6 @@ const ProductsList = () => {
             couro cabeludo.
           </p>
 
-          <div className="flex justify-center mb-10">
-            <ul className="text-sm text-muted-foreground space-y-2 text-left">
-              <li>✔ FPS 50+</li>
-              <li>✔ Toque seco</li>
-              <li>✔ Resistente à água</li>
-              <li>✔ Foco em couro cabeludo exposto</li>
-            </ul>
-          </div>
-
           <div className="flex justify-center">
             <img
               src="/Logo%20transparente.png"

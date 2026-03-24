@@ -147,9 +147,9 @@ const HomePage = () => {
         {/* Quem Somos Section */}
         <section className="py-28 bg-gradient-to-b from-black to-card">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p className="text-base md:text-lg uppercase tracking-[0.6em] text-primary mb-8 text-center">
-            BALDSHIELD
-            </p>
+            <p className="text-lg md:text-xl uppercase tracking-[0.7em] text-primary mb-10 text-center font-semibold">
+  BALDSHIELD
+</p>
 
             <h2
               className="text-4xl md:text-5xl font-bold text-foreground mb-6"

@@ -17,14 +17,12 @@ const ProductsList = () => {
 
   return (
     <div className="space-y-20">
-
-      {/* Produto */}
-      <div className="text-center max-w-4xl mx-auto">
+      <div className="text-center max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <p className="text-base md:text-lg uppercase tracking-[0.5em] text-primary font-semibold mb-6 text-center">
+          <p className="text-base md:text-lg uppercase tracking-[0.5em] text-primary font-semibold mb-6 text-center w-full">
             LANÇAMENTO EM BREVE
           </p>
 
@@ -57,7 +55,6 @@ const ProductsList = () => {
         </motion.div>
       </div>
 
-      {/* Lista de espera */}
       <div className="text-center max-w-2xl mx-auto">
         <h3
           className="text-2xl font-semibold text-foreground mb-4"
@@ -86,7 +83,6 @@ const ProductsList = () => {
         </form>
       </div>
 
-      {/* Redes */}
       <div className="text-center">
         <h3
           className="text-xl font-semibold text-foreground mb-4"
@@ -95,26 +91,32 @@ const ProductsList = () => {
           Acompanhe o lançamento
         </h3>
 
-        <div className="flex justify-center gap-6">
-          <a href="https://instagram.com" target="_blank" className="flex items-center gap-2 text-secondary hover:text-primary">
+        <div className="flex justify-center gap-6 flex-wrap">
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 text-secondary hover:text-primary"
+          >
             <Instagram size={20} />
             Instagram
           </a>
 
-          <a href="mailto:support@baldshield.com" className="flex items-center gap-2 text-secondary hover:text-primary">
+          <a
+            href="mailto:support@baldshield.com"
+            className="flex items-center gap-2 text-secondary hover:text-primary"
+          >
             <Mail size={20} />
             E-mail
           </a>
         </div>
       </div>
 
-      {/* Posicionamento */}
       <div className="text-center max-w-3xl mx-auto">
         <p className="text-lg text-secondary">
           A BaldShield nasce como uma marca criada para liderar uma nova categoria no Brasil: proteção e saúde do couro cabeludo para homens carecas.
         </p>
       </div>
-
     </div>
   );
 };

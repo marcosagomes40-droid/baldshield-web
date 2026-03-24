@@ -37,8 +37,6 @@ const Footer = () => {
     <footer className="bg-black border-t border-border/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          
-          {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center space-x-4 mb-4">
               <img
@@ -60,9 +58,11 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Links */}
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
+            <h3
+              className="text-lg font-semibold text-foreground mb-4"
+              style={{ fontFamily: 'Playfair Display, serif' }}
+            >
               Links rápidos
             </h3>
             <ul className="space-y-3">
@@ -79,9 +79,11 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contato + Redes */}
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
+            <h3
+              className="text-lg font-semibold text-foreground mb-4"
+              style={{ fontFamily: 'Playfair Display, serif' }}
+            >
               Contato
             </h3>
 
@@ -108,12 +110,12 @@ const Footer = () => {
                   </a>
                 ))}
 
-                {/* TikTok simples (seguro) */}
                 <a
                   href="https://tiktok.com/@baldshield"
                   target="_blank"
                   rel="noreferrer"
                   className="text-secondary hover:text-primary transition-colors duration-200"
+                  aria-label="TikTok"
                 >
                   <span className="text-sm font-bold">♪</span>
                 </a>
@@ -121,9 +123,11 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Lista de espera */}
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
+            <h3
+              className="text-lg font-semibold text-foreground mb-4"
+              style={{ fontFamily: 'Playfair Display, serif' }}
+            >
               Lista de espera
             </h3>
 

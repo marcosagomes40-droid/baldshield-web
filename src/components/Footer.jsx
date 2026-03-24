@@ -44,12 +44,9 @@ const Footer = () => {
               <img
               src="/Logo%20transparente.png"
               alt="Logo da BaldShield"
-              className="w-12 h-12 object-contain"
+              className="w-14 h-14 object-contain"
               />
-              <span className="text-2xl font-bold text-foreground" style={{ fontFamily: 'Playfair Display, serif' }}>
-                BaldShield
-              </span>
-            </div>
+              </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Proteção solar premium desenvolvida especialmente para cabeças carecas. Proteja seu couro cabeludo com estilo, segurança e confiança.
             </p>

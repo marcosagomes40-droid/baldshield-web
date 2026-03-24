@@ -12,27 +12,32 @@ const BenefitsPage = () => {
     {
       icon: Shield,
       title: 'Proteção UV avançada',
-      description: 'Fórmula FPS 50+ desenvolvida para proteger o couro cabeludo contra os raios UVA e UVB, ajudando a prevenir queimaduras, envelhecimento precoce e danos causados pela exposição solar.',
+      description:
+        'Fórmula FPS 50+ desenvolvida para proteger o couro cabeludo contra os raios UVA e UVB, ajudando a prevenir queimaduras, envelhecimento precoce e danos causados pela exposição solar.',
     },
     {
       icon: Droplet,
       title: 'Resistente à água',
-      description: 'Mantém a proteção mesmo durante atividades ao ar livre, suor intenso ou contato com água. Ideal para esportes, praia e uso no dia a dia.',
+      description:
+        'Mantém a proteção mesmo durante atividades ao ar livre, suor intenso ou contato com água. Ideal para esportes, praia e uso no dia a dia.',
     },
     {
       icon: Sparkles,
       title: 'Toque seco e confortável',
-      description: 'Textura leve, rápida absorção e sem oleosidade. Desenvolvido para uso diário sem desconforto ou brilho excessivo no couro cabeludo.',
+      description:
+        'Textura leve, rápida absorção e sem oleosidade. Desenvolvido para uso diário sem desconforto ou brilho excessivo no couro cabeludo.',
     },
     {
       icon: Award,
       title: 'Testado dermatologicamente',
-      description: 'Fórmula segura e adequada para o couro cabeludo, inclusive em peles sensíveis. Desenvolvido com foco em proteção e segurança.',
+      description:
+        'Fórmula segura e adequada para o couro cabeludo, inclusive em peles sensíveis. Desenvolvido com foco em proteção e segurança.',
     },
     {
       icon: Heart,
       title: 'Cuidado com o couro cabeludo',
-      description: 'Além de proteger, ajuda a manter a saúde da pele, prevenindo ressecamento e desconforto causados pela exposição ao sol.',
+      description:
+        'Além de proteger, ajuda a manter a saúde da pele, prevenindo ressecamento e desconforto causados pela exposição ao sol.',
     },
   ];
 
@@ -59,7 +64,7 @@ const BenefitsPage = () => {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <p className="text-base md:text-lg uppercase tracking-[0.5em] text-primary font-semibold mb-8">
+              <p className="text-lg md:text-xl uppercase tracking-[0.6em] text-primary font-semibold mb-10">
                 BENEFÍCIOS
               </p>
 
@@ -70,8 +75,10 @@ const BenefitsPage = () => {
                 Por que usar BaldShield
               </h1>
 
-              <p className="text-xl text-secondary max-w-2xl mx-auto leading-relaxed">
-                Desenvolvido especialmente para o couro cabeludo de homens carecas, combinando proteção, conforto e desempenho para o dia a dia.
+              <p className="text-xl text-secondary max-w-xl mx-auto leading-relaxed">
+                Desenvolvido especialmente para o couro cabeludo de homens
+                carecas, combinando proteção, conforto e desempenho real para o
+                dia a dia.
               </p>
             </motion.div>
           </div>
@@ -110,7 +117,7 @@ const BenefitsPage = () => {
               {[
                 { value: '50+', label: 'FPS de proteção' },
                 { value: '80min', label: 'Resistente à água' },
-                { value: '100%', label: 'Foco em couro cabeludo' },
+                { value: '100%', label: 'Especializado em couro cabeludo' },
               ].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -120,7 +127,10 @@ const BenefitsPage = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="text-center"
                 >
-                  <div className="text-5xl md:text-6xl font-bold text-primary mb-3">
+                  <div
+                    className="text-5xl md:text-6xl font-bold text-primary mb-3"
+                    style={{ fontFamily: 'Playfair Display, serif', fontVariantNumeric: 'tabular-nums' }}
+                  >
                     {stat.value}
                   </div>
                   <p className="text-lg text-secondary font-medium">

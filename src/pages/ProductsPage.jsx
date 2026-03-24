@@ -40,16 +40,15 @@ const ProductsPage = () => {
       <div className="min-h-screen bg-black">
         <Header />
 
-        {/* Page Header */}
         <section className="py-20 bg-gradient-to-b from-black to-card border-b border-border/40">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <p className="text-sm uppercase tracking-[0.35em] text-primary font-medium mb-6">
-                Nossos produtos
+              <p className="text-base md:text-lg uppercase tracking-[0.5em] text-primary font-semibold mb-8 text-center w-full">
+                NOSSOS PRODUTOS
               </p>
 
               <h1
@@ -60,22 +59,20 @@ const ProductsPage = () => {
               </h1>
 
               <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
-                Descubra a linha BaldShield desenvolvida para proteger o couro
-                cabeludo contra o sol com alta performance, conforto e segurança
-                no dia a dia.
+                Conheça a linha BaldShield desenvolvida para proteger o couro
+                cabeludo da exposição solar com alta performance, conforto e
+                segurança no dia a dia.
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Products Grid Section */}
         <section className="py-24 bg-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ProductsList />
           </div>
         </section>
 
-        {/* Product Highlights */}
         <section className="py-20 bg-gradient-to-b from-black to-card border-t border-border/40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">

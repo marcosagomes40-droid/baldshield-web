@@ -64,18 +64,18 @@ const BenefitsPage = () => {
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <p className="text-lg md:text-xl uppercase tracking-[0.6em] text-primary font-semibold mb-10">
+              <p className="text-lg md:text-xl uppercase tracking-[0.6em] text-primary font-semibold mb-12">
                 BENEFÍCIOS
               </p>
 
               <h1
-                className="text-5xl md:text-6xl font-bold text-foreground mb-6"
+                className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6"
                 style={{ fontFamily: 'Playfair Display, serif' }}
               >
                 Por que usar BaldShield
               </h1>
 
-              <p className="text-xl text-secondary max-w-xl mx-auto leading-relaxed">
+              <p className="text-xl text-secondary/90 max-w-xl mx-auto leading-8">
                 Desenvolvido especialmente para o couro cabeludo de homens
                 carecas, combinando proteção, conforto e desempenho real para o
                 dia a dia.
@@ -87,7 +87,7 @@ const BenefitsPage = () => {
         {/* Grid */}
         <section className="py-20 bg-card">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4 mb-8">
               {benefits.slice(0, 4).map((benefit, index) => (
                 <BenefitCard
                   key={index}

@@ -10,6 +10,7 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '',
     message: '',
   });
 
@@ -28,10 +29,12 @@ const ContactForm = () => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
+
     submissions.push({
       ...formData,
       timestamp: new Date().toISOString(),
     });
+
     localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
 
     toast({
@@ -42,6 +45,7 @@ const ContactForm = () => {
     setFormData({
       name: '',
       email: '',
+      subject: '',
       message: '',
     });
 
@@ -50,6 +54,8 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+
+      {/* Nome */}
       <div className="space-y-2">
         <Label htmlFor="name" className="text-foreground font-medium">
           Nome
@@ -61,11 +67,12 @@ const ContactForm = () => {
           value={formData.name}
           onChange={handleChange}
           required
-          className="bg-card border-border text-foreground placeholder:text-muted-foreground"
           placeholder="Seu nome"
+          className="bg-card border-border text-foreground"
         />
       </div>
 
+      {/* Email */}
       <div className="space-y-2">
         <Label htmlFor="email" className="text-foreground font-medium">
           E-mail
@@ -77,11 +84,33 @@ const ContactForm = () => {
           value={formData.email}
           onChange={handleChange}
           required
-          className="bg-card border-border text-foreground placeholder:text-muted-foreground"
-          placeholder="seuemail@exemplo.com"
+          placeholder="seu@email.com"
+          className="bg-card border-border text-foreground"
         />
       </div>
 
+      {/* Assunto */}
+      <div className="space-y-2">
+        <Label htmlFor="subject" className="text-foreground font-medium">
+          Assunto
+        </Label>
+        <select
+          id="subject"
+          name="subject"
+          value={formData.subject}
+          onChange={handleChange}
+          required
+          className="w-full bg-card border border-border text-foreground rounded-md px-3 py-2"
+        >
+          <option value="">Selecione um assunto</option>
+          <option value="duvida">Dúvida</option>
+          <option value="parceria">Parceria</option>
+          <option value="lista">Lista de espera</option>
+          <option value="imprensa">Imprensa</option>
+        </select>
+      </div>
+
+      {/* Mensagem */}
       <div className="space-y-2">
         <Label htmlFor="message" className="text-foreground font-medium">
           Mensagem
@@ -93,21 +122,22 @@ const ContactForm = () => {
           onChange={handleChange}
           required
           rows={6}
-          className="bg-card border-border text-foreground placeholder:text-muted-foreground resize-none"
-          placeholder="Como podemos ajudar você?"
+          placeholder="Escreva sua mensagem..."
+          className="bg-card border-border text-foreground resize-none"
         />
       </div>
 
+      {/* Botão */}
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-primary hover:bg-primary/90 text-white font-semibold text-lg py-6 transition-all duration-200 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-primary hover:bg-primary/90 text-white font-semibold transition-all duration-200 active:scale-[0.98] disabled:opacity-50"
       >
         {isSubmitting ? (
           'Enviando...'
         ) : (
           <>
-            <Send className="w-5 h-5 mr-2" />
+            <Send className="w-4 h-4 mr-2" />
             Enviar mensagem
           </>
         )}

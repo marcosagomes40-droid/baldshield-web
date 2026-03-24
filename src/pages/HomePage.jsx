@@ -111,7 +111,7 @@ const HomePage = () => {
                     className="bg-primary hover:bg-primary/90 text-white font-semibold text-lg px-10 py-6 h-auto transition-all duration-200 active:scale-[0.98]"
                   >
                     <Link to="/products">
-                      Quero ser avisado do lançamento
+                      Quero testar primeiro
                       <ArrowRight className="w-5 h-5 ml-2" />
                     </Link>
                   </Button>

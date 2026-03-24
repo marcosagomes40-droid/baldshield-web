@@ -1,4 +1,4 @@
-{ useState } from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -25,10 +25,8 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulação de envio
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    // Salva localmente (temporário)
     const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
     submissions.push({
       ...formData,
@@ -41,14 +39,17 @@ const ContactForm = () => {
       description: 'Obrigado pelo contato. Retornaremos em breve.',
     });
 
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({
+      name: '',
+      email: '',
+      message: '',
+    });
+
     setIsSubmitting(false);
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-
-      {/* Nome */}
       <div className="space-y-2">
         <Label htmlFor="name" className="text-foreground font-medium">
           Nome
@@ -65,7 +66,6 @@ const ContactForm = () => {
         />
       </div>
 
-      {/* Email */}
       <div className="space-y-2">
         <Label htmlFor="email" className="text-foreground font-medium">
           E-mail
@@ -82,7 +82,6 @@ const ContactForm = () => {
         />
       </div>
 
-      {/* Mensagem */}
       <div className="space-y-2">
         <Label htmlFor="message" className="text-foreground font-medium">
           Mensagem
@@ -99,7 +98,6 @@ const ContactForm = () => {
         />
       </div>
 
-      {/* Botão */}
       <Button
         type="submit"
         disabled={isSubmitting}
@@ -114,7 +112,6 @@ const ContactForm = () => {
           </>
         )}
       </Button>
-
     </form>
   );
 };

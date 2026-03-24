@@ -47,7 +47,7 @@ const Footer = () => {
             className="w-16 h-16 object-contain flex-shrink-0"
             />
             <span
-              className="text-2xl font-bold text-foreground"
+              className="text-3xl font-bold text-foreground"
               style={{ fontFamily: 'Playfair Display, serif' }}
             >
               BaldShield

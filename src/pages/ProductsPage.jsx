@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
-import { Shield, Droplet, Leaf } from 'lucide-react';
+import { Shield, Droplet, Sparkles } from 'lucide-react';
 import Header from '@/components/Header.jsx';
 import Footer from '@/components/Footer.jsx';
 import CTASection from '@/components/CTASection.jsx';
@@ -11,28 +11,31 @@ const ProductsPage = () => {
   const highlights = [
     {
       icon: Shield,
-      title: 'Proteção avançada',
-      description: 'FPS 50+ para ajudar a proteger o couro cabeludo contra os raios UVA e UVB.',
+      title: 'Proteção FPS 50+',
+      description:
+        'Proteção desenvolvida para ajudar a defender o couro cabeludo contra os efeitos da exposição solar.',
     },
     {
       icon: Droplet,
       title: 'Resistente à água',
-      description: 'Mantém a proteção mesmo durante atividades ao ar livre, suor e contato com água.',
+      description:
+        'Ideal para rotina ao ar livre, calor, suor e momentos de maior exposição ao sol.',
     },
     {
-      icon: Leaf,
-      title: 'Cuidado inteligente',
-      description: 'Fórmula desenvolvida para unir proteção, conforto e praticidade no uso diário.',
+      icon: Sparkles,
+      title: 'Toque seco',
+      description:
+        'Fórmula com sensação leve, confortável e sem brilho excessivo no couro cabeludo.',
     },
   ];
 
   return (
     <>
       <Helmet>
-        <title>Produtos BaldShield | Protetor Solar para Careca</title>
+        <title>Produtos BaldShield | Lista de Espera</title>
         <meta
           name="description"
-          content="Conheça os produtos BaldShield desenvolvidos para proteger o couro cabeludo de homens carecas com FPS 50+, toque seco e resistência à água."
+          content="Conheça o lançamento da BaldShield e entre na lista de espera do primeiro protetor solar para carecas no Brasil."
         />
         <link rel="canonical" href="https://www.baldshield.com/products" />
       </Helmet>
@@ -40,6 +43,7 @@ const ProductsPage = () => {
       <div className="min-h-screen bg-black">
         <Header />
 
+        {/* Hero */}
         <section className="py-20 bg-gradient-to-b from-black to-card border-b border-border/40">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
@@ -48,31 +52,33 @@ const ProductsPage = () => {
               transition={{ duration: 0.8 }}
             >
               <p className="text-base md:text-lg uppercase tracking-[0.5em] text-primary font-semibold mb-8 text-center w-full">
-                NOSSOS PRODUTOS
+                LANÇAMENTO
               </p>
 
               <h1
-                className="text-5xl md:text-6xl font-bold text-foreground mb-6"
+                className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6"
                 style={{ fontFamily: 'Playfair Display, serif' }}
               >
-                Protetor solar para careca
+                O primeiro protetor solar para carecas no Brasil
               </h1>
 
-              <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
-                Conheça a linha BaldShield desenvolvida para proteger o couro
-                cabeludo da exposição solar com alta performance, conforto e
-                segurança no dia a dia.
+              <p className="text-xl text-secondary max-w-2xl mx-auto leading-relaxed">
+                Conheça a BaldShield e entre na lista de espera para acompanhar
+                em primeira mão o lançamento da marca focada na saúde do couro
+                cabeludo de homens carecas.
               </p>
             </motion.div>
           </div>
         </section>
 
+        {/* Product / Waitlist */}
         <section className="py-24 bg-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ProductsList />
           </div>
         </section>
 
+        {/* Highlights */}
         <section className="py-20 bg-gradient-to-b from-black to-card border-t border-border/40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
@@ -80,11 +86,11 @@ const ProductsPage = () => {
                 className="text-3xl md:text-4xl font-bold text-foreground mb-4"
                 style={{ fontFamily: 'Playfair Display, serif' }}
               >
-                O padrão BaldShield
+                Por que acompanhar esse lançamento?
               </h2>
               <p className="text-secondary max-w-2xl mx-auto">
-                Cada produto é pensado para oferecer proteção, conforto e
-                confiança para o couro cabeludo exposto ao sol.
+                BaldShield nasce para atender uma necessidade real: proteger o
+                couro cabeludo com foco, performance e cuidado diário.
               </p>
             </div>
 

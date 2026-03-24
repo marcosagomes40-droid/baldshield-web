@@ -56,14 +56,14 @@ const ProductsList = () => {
           </div>
 
           <div className="flex justify-center mb-10">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-base text-muted-foreground text-left">
+            <ul className="text-sm text-muted-foreground space-y-2 text-left">
               <li>✔ FPS 50+</li>
               <li>✔ Toque seco</li>
               <li>✔ Resistente à água</li>
               <li>✔ Foco em couro cabeludo exposto</li>
             </ul>
-          </div>
-          
+        </div>
+
         </motion.div>
       </div>
 

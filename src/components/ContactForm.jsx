@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+{ useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -12,6 +12,7 @@ const ContactForm = () => {
     email: '',
     message: '',
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -24,10 +25,10 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call
+    // Simulação de envio
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    // Store in localStorage
+    // Salva localmente (temporário)
     const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
     submissions.push({
       ...formData,
@@ -36,8 +37,8 @@ const ContactForm = () => {
     localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
 
     toast({
-      title: 'Message sent',
-      description: 'Thank you for contacting us. We will get back to you soon.',
+      title: 'Mensagem enviada',
+      description: 'Obrigado pelo contato. Retornaremos em breve.',
     });
 
     setFormData({ name: '', email: '', message: '' });
@@ -46,9 +47,11 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+
+      {/* Nome */}
       <div className="space-y-2">
         <Label htmlFor="name" className="text-foreground font-medium">
-          Name
+          Nome
         </Label>
         <Input
           id="name"
@@ -58,13 +61,14 @@ const ContactForm = () => {
           onChange={handleChange}
           required
           className="bg-card border-border text-foreground placeholder:text-muted-foreground"
-          placeholder="Your name"
+          placeholder="Seu nome"
         />
       </div>
 
+      {/* Email */}
       <div className="space-y-2">
         <Label htmlFor="email" className="text-foreground font-medium">
-          Email
+          E-mail
         </Label>
         <Input
           id="email"
@@ -74,13 +78,14 @@ const ContactForm = () => {
           onChange={handleChange}
           required
           className="bg-card border-border text-foreground placeholder:text-muted-foreground"
-          placeholder="your.email@example.com"
+          placeholder="seuemail@exemplo.com"
         />
       </div>
 
+      {/* Mensagem */}
       <div className="space-y-2">
         <Label htmlFor="message" className="text-foreground font-medium">
-          Message
+          Mensagem
         </Label>
         <Textarea
           id="message"
@@ -90,24 +95,26 @@ const ContactForm = () => {
           required
           rows={6}
           className="bg-card border-border text-foreground placeholder:text-muted-foreground resize-none"
-          placeholder="Tell us how we can help you..."
+          placeholder="Como podemos ajudar você?"
         />
       </div>
 
+      {/* Botão */}
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-primary hover:bg-primary/90 text-white font-semibold transition-all duration-200 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-primary hover:bg-primary/90 text-white font-semibold text-lg py-6 transition-all duration-200 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isSubmitting ? (
-          'Sending...'
+          'Enviando...'
         ) : (
           <>
-            <Send className="w-4 h-4 mr-2" />
-            Send Message
+            <Send className="w-5 h-5 mr-2" />
+            Enviar mensagem
           </>
         )}
       </Button>
+
     </form>
   );
 };

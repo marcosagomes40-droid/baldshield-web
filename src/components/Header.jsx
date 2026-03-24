@@ -28,14 +28,17 @@ const Header = () => {
       <header className="sticky top-0 z-40 bg-black/90 border-b border-border/40 backdrop-blur-md">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-24">
+            
+            {/* Logo */}
             <Link to="/" className="flex items-center group py-2">
               <img
                 src="https://horizons-cdn.hostinger.com/0dff2f89-11ee-409c-8d36-778d795a7ee2/03fdbaa1ddb7eb55c809079def39aafb.png"
                 alt="BaldShield Logo"
-                className="h-16 w-auto object-contain render-crisp transition-transform duration-200 group-hover:scale-105"
+                className="h-16 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
               />
             </Link>
 
+            {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
               {navLinks.map((link) => (
                 <Link
@@ -48,6 +51,7 @@ const Header = () => {
                   }`}
                 >
                   {link.name}
+
                   {isActive(link.path) && (
                     <motion.div
                       layoutId="activeNav"
@@ -59,7 +63,10 @@ const Header = () => {
               ))}
             </div>
 
+            {/* Desktop Actions */}
             <div className="hidden md:flex items-center space-x-6">
+
+              {/* Cart */}
               <button
                 onClick={() => setIsCartOpen(true)}
                 className="relative p-2 text-secondary hover:text-primary transition-colors duration-200"
@@ -73,17 +80,19 @@ const Header = () => {
                 )}
               </button>
 
+              {/* CTA */}
               <Button
                 asChild
                 className="bg-primary hover:bg-primary/90 text-white font-semibold transition-all duration-200 active:scale-[0.98]"
               >
                 <Link to="/products">
                   <ShoppingBag className="w-4 h-4 mr-2" />
-                  Compre Agora
+                  Quero ser avisado
                 </Link>
               </Button>
             </div>
 
+            {/* Mobile Menu Button */}
             <div className="flex items-center space-x-4 md:hidden">
               <button
                 onClick={() => setIsCartOpen(true)}
@@ -108,6 +117,7 @@ const Header = () => {
             </div>
           </div>
 
+          {/* Mobile Menu */}
           <AnimatePresence>
             {mobileMenuOpen && (
               <motion.div
@@ -118,6 +128,7 @@ const Header = () => {
                 className="md:hidden overflow-hidden"
               >
                 <div className="py-4 space-y-4 border-t border-border/40">
+
                   {navLinks.map((link) => (
                     <Link
                       key={link.path}
@@ -139,9 +150,10 @@ const Header = () => {
                   >
                     <Link to="/products" onClick={() => setMobileMenuOpen(false)}>
                       <ShoppingBag className="w-4 h-4 mr-2" />
-                      Compre Agora
+                      Quero ser avisado
                     </Link>
                   </Button>
+
                 </div>
               </motion.div>
             )}

@@ -43,7 +43,7 @@ const HomePage = () => {
         <title>Protetor Solar para Careca | BaldShield Brasil</title>
         <meta
           name="description"
-          content="Proteja seu couro cabeludo com BaldShield. Protetor solar para carecas com FPS 50+, toque seco, resistência à água e uso diário."
+          content="Proteja seu couro cabeludo com BaldShield. O primeiro protetor solar para carecas no Brasil, com FPS 50+, toque seco e resistência à água."
         />
         <meta
           name="keywords"
@@ -57,7 +57,6 @@ const HomePage = () => {
 
         {/* Hero Section */}
         <section className="relative min-h-[100dvh] flex items-center overflow-hidden">
-          {/* Background Image with Overlay */}
           <div className="absolute inset-0">
             <img
               src="https://images.unsplash.com/photo-1570175186172-df2efb259145"
@@ -77,30 +76,35 @@ const HomePage = () => {
                 transition={{ duration: 0.8 }}
                 className="space-y-8"
               >
-                <p className="text-sm uppercase tracking-[0.35em] text-primary font-medium">
+                <p className="text-sm md:text-base uppercase tracking-[0.35em] text-primary font-semibold">
                   O PRIMEIRO PROTETOR SOLAR PARA CARECAS NO BRASIL
                 </p>
 
                 <h1
-                  className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground"
+                  className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[0.95]"
                   style={{ fontFamily: 'Playfair Display, serif' }}
                 >
-                  Proteção real para quem não tem cabelo para proteger
+                  Proteção solar feita para quem é careca
                 </h1>
 
-                <h2
+                <p
                   className="text-2xl md:text-3xl text-foreground/90 leading-tight max-w-2xl"
                   style={{ fontFamily: 'Playfair Display, serif' }}
                 >
-                  FPS 50+ desenvolvido para proteger o couro cabeludo contra queimaduras, envelhecimento e danos do sol.
-                </h2>
-
-                <p className="text-xl text-secondary leading-relaxed max-w-xl">
-                  Desenvolvido para proteger o couro cabeludo contra o sol, com
-                  toque seco, alta performance, FPS 50+ e resistência à água.
+                  Evite queimaduras, manchas e envelhecimento precoce no couro cabeludo.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4">
+                <p className="text-lg text-secondary leading-relaxed max-w-xl">
+                  FPS 50+, toque seco e resistência à água para proteger o couro cabeludo com conforto, segurança e alta performance no dia a dia.
+                </p>
+
+                <div className="text-sm text-muted-foreground space-y-1">
+                  <p>✔ Testado dermatologicamente</p>
+                  <p>✔ Desenvolvido especialmente para o couro cabeludo</p>
+                  <p>✔ Ideal para rotina ao sol</p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-4 pt-2">
                   <Button
                     asChild
                     size="lg"
@@ -148,8 +152,8 @@ const HomePage = () => {
         <section className="py-28 bg-gradient-to-b from-black to-card">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p className="text-lg md:text-xl uppercase tracking-[0.7em] text-primary mb-10 text-center font-semibold">
-  BALDSHIELD
-</p>
+              BALDSHIELD
+            </p>
 
             <h2
               className="text-4xl md:text-5xl font-bold text-foreground mb-6"
@@ -163,9 +167,7 @@ const HomePage = () => {
             </p>
 
             <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-              O couro cabeludo é uma das áreas mais expostas ao sol — e por
-              muito tempo foi negligenciado. A BaldShield surge para mudar isso
-              com foco em saúde, proteção e cuidado diário.
+              O couro cabeludo é uma das áreas mais expostas ao sol — e por muito tempo foi negligenciado. A BaldShield surge para mudar isso com foco em saúde, proteção e cuidado diário.
             </p>
           </div>
         </section>
@@ -187,9 +189,7 @@ const HomePage = () => {
                 Por que escolher a BaldShield?
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Desenvolvido especialmente para o couro cabeludo, com proteção
-                avançada, conforto no uso diário e performance para a rotina ao
-                ar livre.
+                Desenvolvido especialmente para o couro cabeludo, com proteção avançada, conforto no uso diário e performance para a rotina ao ar livre.
               </p>
             </motion.div>
 
@@ -207,9 +207,7 @@ const HomePage = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
         <CTASection />
-
         <Footer />
       </div>
     </>

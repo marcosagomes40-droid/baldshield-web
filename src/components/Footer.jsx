@@ -13,18 +13,18 @@ const Footer = () => {
     e.preventDefault();
     if (email) {
       toast({
-        title: 'Subscribed',
-        description: 'Thank you for subscribing to our newsletter.',
+        title: 'Inscrição realizada',
+        description: 'Obrigado por se inscrever em nossa newsletter.',
       });
       setEmail('');
     }
   };
 
   const quickLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Products', path: '/products' },
-    { name: 'Contact', path: '/contact' },
-    { name: 'Privacy Policy', path: '/privacy' },
+    { name: 'Início', path: '/' },
+    { name: 'Produtos', path: '/products' },
+    { name: 'Contato', path: '/contact' },
+    { name: 'Política de Privacidade', path: '/privacy' },
   ];
 
   const socialLinks = [
@@ -37,6 +37,7 @@ const Footer = () => {
     <footer className="bg-black border-t border-border/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
@@ -48,14 +49,14 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Premium sun protection designed specifically for bald heads. Stay protected in style.
+              Proteção solar premium desenvolvida especialmente para cabeças carecas. Proteja seu couro cabeludo com estilo, segurança e confiança.
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Links Rápidos */}
           <div>
             <h3 className="text-lg font-semibold text-foreground mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
-              Quick Links
+              Links Rápidos
             </h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
@@ -71,10 +72,10 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contato */}
           <div>
             <h3 className="text-lg font-semibold text-foreground mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
-              Contact
+              Contato
             </h3>
             <div className="space-y-3">
               <a
@@ -102,15 +103,15 @@ const Footer = () => {
           {/* Newsletter */}
           <div>
             <h3 className="text-lg font-semibold text-foreground mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>
-              Newsletter
+              Novidades
             </h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Get updates on new products and exclusive offers.
+              Receba novidades sobre novos produtos e ofertas exclusivas.
             </p>
             <form onSubmit={handleNewsletterSubmit} className="space-y-3">
               <Input
                 type="email"
-                placeholder="Your email"
+                placeholder="Seu e-mail"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -121,16 +122,16 @@ const Footer = () => {
                 className="w-full bg-primary hover:bg-primary/90 text-white font-semibold transition-all duration-200 active:scale-[0.98]"
               >
                 <Send className="w-4 h-4 mr-2" />
-                Subscribe
+                Receber novidades
               </Button>
             </form>
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Rodapé final */}
         <div className="mt-12 pt-8 border-t border-border/40">
           <p className="text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} BaldShield. All rights reserved.
+            © {new Date().getFullYear()} BaldShield. Todos os direitos reservados.
           </p>
         </div>
       </div>

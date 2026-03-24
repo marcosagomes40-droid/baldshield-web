@@ -78,21 +78,21 @@ const HomePage = () => {
                 className="space-y-8"
               >
                 <p className="text-sm uppercase tracking-[0.35em] text-primary font-medium">
-                  Saúde e proteção para o couro cabeludo
+                  O PRIMEIRO PROTETOR SOLAR PARA CARECAS NO BRASIL
                 </p>
 
                 <h1
                   className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground"
                   style={{ fontFamily: 'Playfair Display, serif' }}
                 >
-                  Protetor solar para careca
+                  Proteção real para quem não tem cabelo para proteger
                 </h1>
 
                 <h2
                   className="text-2xl md:text-3xl text-foreground/90 leading-tight max-w-2xl"
                   style={{ fontFamily: 'Playfair Display, serif' }}
                 >
-                  Proteção solar inteligente para cabeças carecas
+                  FPS 50+ desenvolvido para proteger o couro cabeludo contra queimaduras, envelhecimento e danos do sol.
                 </h2>
 
                 <p className="text-xl text-secondary leading-relaxed max-w-xl">
@@ -107,7 +107,7 @@ const HomePage = () => {
                     className="bg-primary hover:bg-primary/90 text-white font-semibold text-lg px-10 py-6 h-auto transition-all duration-200 active:scale-[0.98]"
                   >
                     <Link to="/products">
-                      Comprar agora
+                      Quero ser avisado do lançamento
                       <ArrowRight className="w-5 h-5 ml-2" />
                     </Link>
                   </Button>
@@ -159,8 +159,7 @@ const HomePage = () => {
             </h2>
 
             <p className="text-lg md:text-xl text-secondary leading-relaxed max-w-3xl mx-auto mb-6">
-              A BaldShield nasce como uma marca criada para proteger o couro
-              cabeludo de homens carecas com performance, praticidade e estilo.
+              A BaldShield nasce como a primeira marca brasileira focada na saúde do couro cabeludo de homens carecas.
             </p>
 
             <p className="text-base text-muted-foreground max-w-2xl mx-auto">

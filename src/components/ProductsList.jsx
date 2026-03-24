@@ -17,7 +17,6 @@ const ProductsList = () => {
 
   return (
     <div className="space-y-20">
-
       {/* PRODUTO PRINCIPAL */}
       <div className="text-center max-w-4xl mx-auto">
         <motion.div
@@ -25,15 +24,26 @@ const ProductsList = () => {
           animate={{ opacity: 1, y: 0 }}
         >
           <p className="text-sm uppercase tracking-[0.4em] text-primary mb-4">
-            Em breve
+            Lançamento em breve
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2
+            className="text-4xl md:text-5xl font-bold text-foreground mb-4"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
             BaldShield SPF 50+
           </h2>
 
-          <p className="text-lg text-secondary mb-8">
-            Proteção solar desenvolvida especialmente para o couro cabeludo de homens carecas, com toque seco, rápida absorção e resistência à água.
+          <p
+            className="text-2xl md:text-3xl text-foreground/90 mb-6"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            Proteção para couro cabeludo
+          </p>
+
+          <p className="text-lg text-secondary mb-8 max-w-3xl mx-auto leading-relaxed">
+            Proteção solar desenvolvida especialmente para o couro cabeludo de
+            homens carecas, com toque seco, rápida absorção e resistência à água.
           </p>
 
           <div className="flex justify-center">
@@ -48,12 +58,16 @@ const ProductsList = () => {
 
       {/* LISTA DE ESPERA */}
       <div className="text-center max-w-2xl mx-auto">
-        <h3 className="text-2xl font-semibold text-foreground mb-4">
-          Seja um dos primeiros a testar
+        <h3
+          className="text-2xl font-semibold text-foreground mb-4"
+          style={{ fontFamily: 'Playfair Display, serif' }}
+        >
+          Seja um dos primeiros a conhecer
         </h3>
 
         <p className="text-muted-foreground mb-6">
-          Cadastre-se para receber acesso antecipado ao lançamento da BaldShield.
+          Cadastre-se para receber novidades, acesso antecipado ao lançamento e
+          informações exclusivas da BaldShield.
         </p>
 
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
@@ -66,7 +80,7 @@ const ProductsList = () => {
             className="bg-card border-border text-foreground"
           />
 
-          <Button className="bg-primary text-white">
+          <Button className="bg-primary text-white hover:bg-primary/90">
             Quero acesso antecipado
           </Button>
         </form>
@@ -74,15 +88,19 @@ const ProductsList = () => {
 
       {/* REDES SOCIAIS */}
       <div className="text-center">
-        <h3 className="text-xl font-semibold text-foreground mb-4">
+        <h3
+          className="text-xl font-semibold text-foreground mb-4"
+          style={{ fontFamily: 'Playfair Display, serif' }}
+        >
           Acompanhe o lançamento
         </h3>
 
-        <div className="flex justify-center gap-6">
+        <div className="flex justify-center gap-6 flex-wrap">
           <a
             href="https://instagram.com"
             target="_blank"
-            className="flex items-center gap-2 text-secondary hover:text-primary"
+            rel="noreferrer"
+            className="flex items-center gap-2 text-secondary hover:text-primary transition-colors duration-200"
           >
             <Instagram size={20} />
             Instagram
@@ -90,21 +108,22 @@ const ProductsList = () => {
 
           <a
             href="mailto:support@baldshield.com"
-            className="flex items-center gap-2 text-secondary hover:text-primary"
+            className="flex items-center gap-2 text-secondary hover:text-primary transition-colors duration-200"
           >
             <Mail size={20} />
-            Email
+            E-mail
           </a>
         </div>
       </div>
 
       {/* POSICIONAMENTO */}
       <div className="text-center max-w-3xl mx-auto">
-        <p className="text-lg text-secondary">
-          A BaldShield nasce como a primeira marca no Brasil focada exclusivamente na proteção e saúde do couro cabeludo de homens carecas.
+        <p className="text-lg text-secondary leading-relaxed">
+          A BaldShield nasce como uma marca criada para liderar uma nova
+          categoria no Brasil: proteção e saúde do couro cabeludo para homens
+          carecas.
         </p>
       </div>
-
     </div>
   );
 };

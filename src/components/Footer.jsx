@@ -41,9 +41,11 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-2xl font-bold text-white">B</span>
-              </div>
+              <img
+              src="/Logo%20transparente.png"
+              alt="Logo da BaldShield"
+              className="w-12 h-12 object-contain"
+              />
               <span className="text-2xl font-bold text-foreground" style={{ fontFamily: 'Playfair Display, serif' }}>
                 BaldShield
               </span>

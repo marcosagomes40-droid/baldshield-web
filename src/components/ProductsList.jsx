@@ -47,11 +47,13 @@ const ProductsList = () => {
             couro cabeludo.
           </p>
 
-          <div className="text-sm text-muted-foreground space-y-1 mb-10">
-            <p>✔ FPS 50+</p>
-            <p>✔ Toque seco</p>
-            <p>✔ Resistente à água</p>
-            <p>✔ Foco em couro cabeludo exposto</p>
+          <div className="flex justify-center mb-10">
+            <ul className="text-sm text-muted-foreground space-y-2 text-left">
+              <li>✔ FPS 50+</li>
+              <li>✔ Toque seco</li>
+              <li>✔ Resistente à água</li>
+              <li>✔ Foco em couro cabeludo exposto</li>
+            </ul>
           </div>
 
           <div className="flex justify-center">

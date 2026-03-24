@@ -6,9 +6,9 @@ import { ShoppingBag, Shield, Award, Sparkles } from 'lucide-react';
 
 const CTASection = () => {
   const trustBadges = [
-    { icon: Shield, text: 'Dermatologist Tested' },
-    { icon: Award, text: 'SPF 50+ Protection' },
-    { icon: Sparkles, text: 'Premium Formula' },
+    { icon: Shield, text: 'Testado dermatologicamente' },
+    { icon: Award, text: 'Proteção FPS 50+' },
+    { icon: Sparkles, text: 'Fórmula premium' },
   ];
 
   return (
@@ -21,12 +21,15 @@ const CTASection = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6" style={{ fontFamily: 'Playfair Display, serif' }}>
-            Ready to protect your head?
+          <h2
+            className="text-4xl md:text-5xl font-bold text-foreground mb-6"
+            style={{ fontFamily: 'Playfair Display, serif' }}
+          >
+            Pronto para proteger sua cabeça?
           </h2>
           
           <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Join thousands of satisfied customers who trust BaldShield for premium sun protection.
+            Junte-se a milhares de pessoas que já confiam na BaldShield para proteção solar premium no dia a dia.
           </p>
 
           <Button
@@ -36,7 +39,7 @@ const CTASection = () => {
           >
             <Link to="/products">
               <ShoppingBag className="w-5 h-5 mr-3" />
-              Shop Now
+              Comprar agora
             </Link>
           </Button>
 
@@ -54,7 +57,9 @@ const CTASection = () => {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
                   <badge.icon className="w-8 h-8 text-primary" />
                 </div>
-                <span className="text-sm font-medium text-secondary">{badge.text}</span>
+                <span className="text-sm font-medium text-secondary">
+                  {badge.text}
+                </span>
               </motion.div>
             ))}
           </div>

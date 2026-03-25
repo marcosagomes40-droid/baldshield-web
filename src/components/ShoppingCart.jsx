@@ -113,5 +113,4 @@ const ShoppingCart = ({ isCartOpen, setIsCartOpen }) => {
     </AnimatePresence>
   );
 };
-
 export default ShoppingCart;

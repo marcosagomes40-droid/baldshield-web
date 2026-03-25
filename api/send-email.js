@@ -55,32 +55,75 @@ export default async function handler(req, res) {
     let autoReplyResult = null;
     let autoReplyError = null;
 
-    // 2) Auto-resposta para o cliente
+    // 2) Auto-resposta premium para o cliente
     try {
       autoReplyResult = await resend.emails.send({
         from: 'BaldShield <contato@baldshield.com>',
         to: email,
         subject: 'Recebemos sua mensagem | BaldShield',
         html: `
-          <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111; max-width: 600px; margin: 0 auto;">
-            <h2 style="margin-bottom: 16px;">Olá${nome ? `, ${nome}` : ''}!</h2>
+          <div style="background:#0b0b0b; padding:40px 20px; font-family: Arial, sans-serif;">
+            <div style="max-width:600px; margin:0 auto; background:#111; border-radius:12px; overflow:hidden; border:1px solid #222;">
 
-            <p>Recebemos sua mensagem com sucesso e agradecemos seu contato com a <strong>BaldShield</strong>.</p>
+              <div style="padding:24px; text-align:center; border-bottom:1px solid #222;">
+                <h1 style="color:#ff6a00; margin:0; font-size:22px; letter-spacing:1px;">
+                  BALDSHIELD
+                </h1>
+                <p style="color:#888; margin:8px 0 0 0; font-size:12px;">
+                  Proteção solar feita para quem é careca
+                </p>
+              </div>
 
-            <p>Nosso time vai analisar sua solicitação e retornar o mais breve possível.</p>
+              <div style="padding:32px 24px; color:#eaeaea;">
 
-            <div style="margin: 24px 0; padding: 16px; background: #f6f6f6; border-radius: 8px;">
-              <p style="margin: 0 0 8px 0;"><strong>Resumo da sua mensagem:</strong></p>
-              <p style="margin: 0;"><strong>Assunto:</strong> ${assunto || '-'}</p>
-              <p style="margin: 8px 0 0 0;"><strong>Mensagem:</strong> ${mensagem || '-'}</p>
+                <h2 style="margin-top:0; font-size:20px;">
+                  Olá${nome ? `, ${nome}` : ''}.
+                </h2>
+
+                <p style="color:#cfcfcf; line-height:1.6;">
+                  Recebemos sua mensagem com sucesso.
+                </p>
+
+                <p style="color:#cfcfcf; line-height:1.6;">
+                  Você está falando com uma marca que está criando o <strong style="color:#ff6a00;">primeiro protetor solar pensado para carecas no Brasil</strong>.
+                </p>
+
+                <p style="color:#cfcfcf; line-height:1.6;">
+                  Nosso time já está analisando sua mensagem e retornaremos em breve.
+                </p>
+
+                <div style="background:#1a1a1a; padding:16px; border-radius:8px; margin:24px 0;">
+                  <p style="margin:0 0 8px 0; color:#999; font-size:12px;">Resumo da sua mensagem</p>
+                  <p style="margin:0;"><strong>Assunto:</strong> ${assunto || '-'}</p>
+                  <p style="margin:8px 0 0 0;"><strong>Mensagem:</strong> ${mensagem || '-'}</p>
+                </div>
+
+                <div style="text-align:center; margin:32px 0;">
+                  <a href="https://www.baldshield.com" 
+                    style="background:#ff6a00; color:#fff; padding:14px 22px; border-radius:6px; text-decoration:none; font-weight:bold; display:inline-block;">
+                    Acompanhar lançamento
+                  </a>
+                </div>
+
+                <p style="text-align:center; color:#888; font-size:13px;">
+                  Siga também:
+                </p>
+
+                <p style="text-align:center;">
+                  <a href="https://instagram.com/baldshield.br" style="color:#ff6a00; text-decoration:none;">
+                    @baldshield.br
+                  </a>
+                </p>
+
+              </div>
+
+              <div style="padding:16px; text-align:center; border-top:1px solid #222;">
+                <p style="color:#666; font-size:12px; margin:0;">
+                  BaldShield © ${new Date().getFullYear()}
+                </p>
+              </div>
+
             </div>
-
-            <p>Seguimos à disposição.</p>
-
-            <p style="margin-top: 24px;">
-              <strong>BaldShield</strong><br />
-              Proteção solar feita para quem é careca
-            </p>
           </div>
         `,
       });

@@ -35,7 +35,7 @@ export default async function handler(req, res) {
     }
 
     // =============================
-    // 1) EMAIL INTERNO
+    // EMAIL INTERNO
     // =============================
     const internalResult = await resend.emails.send({
       from: 'BaldShield <contato@baldshield.com>',
@@ -58,7 +58,7 @@ export default async function handler(req, res) {
     let autoReplyError = null;
 
     // =============================
-    // 2) AUTO-RESPOSTA PREMIUM
+    // AUTO-RESPOSTA COM LOGO
     // =============================
     try {
       autoReplyResult = await resend.emails.send({
@@ -75,7 +75,8 @@ export default async function handler(req, res) {
                 <img 
                   src="https://www.baldshield.com/logo.png"
                   alt="BaldShield"
-                  style="max-width:160px; margin-bottom:12px;"
+                  width="140"
+                  style="display:block; margin:0 auto 12px auto;"
                 />
 
                 <p style="color:#888; margin:0; font-size:12px;">

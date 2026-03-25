@@ -4,7 +4,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
+    return res.status(405).json({ success: false, error: 'Method not allowed' });
   }
 
   try {
@@ -28,6 +28,6 @@ export default async function handler(req, res) {
     return res.status(200).json({ success: true });
   } catch (error) {
     console.error('Erro ao enviar email:', error);
-    return res.status(500).json({ error: 'Erro ao enviar email' });
+    return res.status(500).json({ success: false, error: 'Erro ao enviar email' });
   }
 }

@@ -34,7 +34,9 @@ export default async function handler(req, res) {
       });
     }
 
-    // 1) Email interno para BaldShield
+    // =============================
+    // 1) EMAIL INTERNO
+    // =============================
     const internalResult = await resend.emails.send({
       from: 'BaldShield <contato@baldshield.com>',
       to: 'contato@baldshield.com',
@@ -55,7 +57,9 @@ export default async function handler(req, res) {
     let autoReplyResult = null;
     let autoReplyError = null;
 
-    // 2) Auto-resposta premium para o cliente
+    // =============================
+    // 2) AUTO-RESPOSTA PREMIUM
+    // =============================
     try {
       autoReplyResult = await resend.emails.send({
         from: 'BaldShield <contato@baldshield.com>',
@@ -65,15 +69,22 @@ export default async function handler(req, res) {
           <div style="background:#0b0b0b; padding:40px 20px; font-family: Arial, sans-serif;">
             <div style="max-width:600px; margin:0 auto; background:#111; border-radius:12px; overflow:hidden; border:1px solid #222;">
 
+              <!-- HEADER COM LOGO -->
               <div style="padding:24px; text-align:center; border-bottom:1px solid #222;">
-                <h1 style="color:#ff6a00; margin:0; font-size:22px; letter-spacing:1px;">
-                  BALDSHIELD
-                </h1>
-                <p style="color:#888; margin:8px 0 0 0; font-size:12px;">
+                
+                <img 
+                  src="https://www.baldshield.com/logo.png"
+                  alt="BaldShield"
+                  style="max-width:160px; margin-bottom:12px;"
+                />
+
+                <p style="color:#888; margin:0; font-size:12px;">
                   Proteção solar feita para quem é careca
                 </p>
+
               </div>
 
+              <!-- BODY -->
               <div style="padding:32px 24px; color:#eaeaea;">
 
                 <h2 style="margin-top:0; font-size:20px;">
@@ -85,19 +96,30 @@ export default async function handler(req, res) {
                 </p>
 
                 <p style="color:#cfcfcf; line-height:1.6;">
-                  Você está falando com uma marca que está criando o <strong style="color:#ff6a00;">primeiro protetor solar pensado para carecas no Brasil</strong>.
+                  Você está falando com uma marca que está criando o 
+                  <strong style="color:#ff6a00;">
+                    primeiro protetor solar pensado para carecas no Brasil
+                  </strong>.
                 </p>
 
                 <p style="color:#cfcfcf; line-height:1.6;">
                   Nosso time já está analisando sua mensagem e retornaremos em breve.
                 </p>
 
+                <!-- RESUMO -->
                 <div style="background:#1a1a1a; padding:16px; border-radius:8px; margin:24px 0;">
-                  <p style="margin:0 0 8px 0; color:#999; font-size:12px;">Resumo da sua mensagem</p>
-                  <p style="margin:0;"><strong>Assunto:</strong> ${assunto || '-'}</p>
-                  <p style="margin:8px 0 0 0;"><strong>Mensagem:</strong> ${mensagem || '-'}</p>
+                  <p style="margin:0 0 8px 0; color:#999; font-size:12px;">
+                    Resumo da sua mensagem
+                  </p>
+                  <p style="margin:0;">
+                    <strong>Assunto:</strong> ${assunto || '-'}
+                  </p>
+                  <p style="margin:8px 0 0 0;">
+                    <strong>Mensagem:</strong> ${mensagem || '-'}
+                  </p>
                 </div>
 
+                <!-- CTA -->
                 <div style="text-align:center; margin:32px 0;">
                   <a href="https://www.baldshield.com" 
                     style="background:#ff6a00; color:#fff; padding:14px 22px; border-radius:6px; text-decoration:none; font-weight:bold; display:inline-block;">
@@ -105,6 +127,7 @@ export default async function handler(req, res) {
                   </a>
                 </div>
 
+                <!-- SOCIAL -->
                 <p style="text-align:center; color:#888; font-size:13px;">
                   Siga também:
                 </p>
@@ -117,6 +140,7 @@ export default async function handler(req, res) {
 
               </div>
 
+              <!-- FOOTER -->
               <div style="padding:16px; text-align:center; border-top:1px solid #222;">
                 <p style="color:#666; font-size:12px; margin:0;">
                   BaldShield © ${new Date().getFullYear()}

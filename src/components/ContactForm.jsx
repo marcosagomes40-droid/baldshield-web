@@ -30,35 +30,53 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(SCRIPT_URL, {
-        method: 'POST',
-        body: JSON.stringify({
-          nome: formData.name,
-          email: formData.email,
-          assunto: formData.subject,
-          mensagem: formData.message,
-          origem: 'contato-site',
+      const payload = {
+        nome: formData.name,
+        email: formData.email,
+        assunto: formData.subject,
+        mensagem: formData.message,
+        origem: 'contato-site',
+      };
+
+      const [sheetResponse, emailResponse] = await Promise.all([
+        fetch(SCRIPT_URL, {
+          method: 'POST',
+          body: JSON.stringify(payload),
         }),
+        fetch('/api/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        }),
+      ]);
+
+      const sheetResult = await sheetResponse.json();
+      const emailResult = await emailResponse.json();
+
+      if (!sheetResponse.ok || !sheetResult.success) {
+        throw new Error(sheetResult.error || 'Erro ao salvar na planilha');
+      }
+
+      if (!emailResponse.ok || !emailResult.success) {
+        throw new Error(emailResult.error || 'Erro ao enviar email');
+      }
+
+      toast({
+        title: 'Mensagem enviada',
+        description: 'Recebemos seu contato com sucesso.',
       });
 
-      const result = await response.json();
-
-      if (result.success) {
-        toast({
-          title: 'Mensagem enviada',
-          description: 'Recebemos seu contato com sucesso.',
-        });
-
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: '',
-        });
-      } else {
-        throw new Error(result.error || 'Erro no envio');
-      }
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      });
     } catch (error) {
+      console.error(error);
+
       toast({
         title: 'Erro ao enviar',
         description: 'Não foi possível enviar sua mensagem. Tente novamente.',

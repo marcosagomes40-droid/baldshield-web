@@ -6,6 +6,9 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Send } from 'lucide-react';
 
+const SCRIPT_URL =
+  'https://script.google.com/macros/s/AKfycbwrA99Uyr3o6lC-mbMTqL1jxZk0BEzNUKkqqyo1Muhx2Tn0UQHZT_jmkhPfBh4GADTPLw/exec';
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -26,36 +29,47 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify({
+          nome: formData.name,
+          email: formData.email,
+          assunto: formData.subject,
+          mensagem: formData.message,
+          origem: 'contato-site',
+        }),
+      });
 
-    const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
+      const result = await response.json();
 
-    submissions.push({
-      ...formData,
-      timestamp: new Date().toISOString(),
-    });
+      if (result.success) {
+        toast({
+          title: 'Mensagem enviada',
+          description: 'Recebemos seu contato com sucesso.',
+        });
 
-    localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
-
-    toast({
-      title: 'Mensagem enviada',
-      description: 'Obrigado pelo contato. Retornaremos em breve.',
-    });
-
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    });
-
-    setIsSubmitting(false);
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        throw new Error(result.error || 'Erro no envio');
+      }
+    } catch (error) {
+      toast({
+        title: 'Erro ao enviar',
+        description: 'Não foi possível enviar sua mensagem. Tente novamente.',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-
-      {/* Nome */}
       <div className="space-y-2">
         <Label htmlFor="name" className="text-foreground font-medium">
           Nome
@@ -72,7 +86,6 @@ const ContactForm = () => {
         />
       </div>
 
-      {/* Email */}
       <div className="space-y-2">
         <Label htmlFor="email" className="text-foreground font-medium">
           E-mail
@@ -89,7 +102,6 @@ const ContactForm = () => {
         />
       </div>
 
-      {/* Assunto */}
       <div className="space-y-2">
         <Label htmlFor="subject" className="text-foreground font-medium">
           Assunto
@@ -103,14 +115,13 @@ const ContactForm = () => {
           className="w-full bg-card border border-border text-foreground rounded-md px-3 py-2"
         >
           <option value="">Selecione um assunto</option>
-          <option value="duvida">Dúvida</option>
-          <option value="parceria">Parceria</option>
-          <option value="lista">Lista de espera</option>
-          <option value="imprensa">Imprensa</option>
+          <option value="Dúvida">Dúvida</option>
+          <option value="Parceria">Parceria</option>
+          <option value="Lista de espera">Lista de espera</option>
+          <option value="Imprensa">Imprensa</option>
         </select>
       </div>
 
-      {/* Mensagem */}
       <div className="space-y-2">
         <Label htmlFor="message" className="text-foreground font-medium">
           Mensagem
@@ -127,7 +138,6 @@ const ContactForm = () => {
         />
       </div>
 
-      {/* Botão */}
       <Button
         type="submit"
         disabled={isSubmitting}

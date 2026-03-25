@@ -38,25 +38,30 @@ const ContactForm = () => {
         origem: 'contato-site',
       };
 
-      const [sheetResponse, emailResponse] = await Promise.all([
-        fetch(SCRIPT_URL, {
-          method: 'POST',
-          body: JSON.stringify(payload),
-        }),
-        fetch('/api/send-email', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(payload),
-        }),
-      ]);
+      // 1) Salva na planilha
+      const sheetResponse = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify(payload),
+      });
 
-      const sheetResult = await sheetResponse.json();
-      const emailResult = await emailResponse.json();
+      if (!sheetResponse.ok) {
+        throw new Error('Erro ao salvar na planilha');
+      }
 
-      if (!sheetResponse.ok || !sheetResult.success) {
-        throw new Error(sheetResult.error || 'Erro ao salvar na planilha');
+      // 2) Envia o e-mail
+      const emailResponse = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      let emailResult = {};
+      try {
+        emailResult = await emailResponse.json();
+      } catch {
+        throw new Error('Resposta inválida da API de email');
       }
 
       if (!emailResponse.ok || !emailResult.success) {
@@ -75,11 +80,12 @@ const ContactForm = () => {
         message: '',
       });
     } catch (error) {
-      console.error(error);
+      console.error('Erro no formulário:', error);
 
       toast({
         title: 'Erro ao enviar',
-        description: 'Não foi possível enviar sua mensagem. Tente novamente.',
+        description:
+          error.message || 'Não foi possível enviar sua mensagem. Tente novamente.',
       });
     } finally {
       setIsSubmitting(false);

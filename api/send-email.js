@@ -1,16 +1,33 @@
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
-    return res.status(405).json({ success: false, error: 'Method not allowed' });
+    return res.status(405).json({
+      success: false,
+      error: 'Method not allowed',
+    });
   }
 
   try {
-    const { nome, email, assunto, mensagem } = req.body;
+    const apiKey = process.env.RESEND_API_KEY;
 
-    await resend.emails.send({
+    if (!apiKey) {
+      return res.status(500).json({
+        success: false,
+        error: 'RESEND_API_KEY não configurada',
+      });
+    }
+
+    const resend = new Resend(apiKey);
+
+    const body =
+      typeof req.body === 'string'
+        ? JSON.parse(req.body || '{}')
+        : req.body || {};
+
+    const { nome, email, assunto, mensagem } = body;
+
+    const result = await resend.emails.send({
       from: 'BaldShield <contato@baldshield.com>',
       to: 'contato@baldshield.com',
       subject: `Novo contato do site: ${assunto || 'Sem assunto'}`,
@@ -25,9 +42,16 @@ export default async function handler(req, res) {
       replyTo: email || undefined,
     });
 
-    return res.status(200).json({ success: true });
+    return res.status(200).json({
+      success: true,
+      result,
+    });
   } catch (error) {
     console.error('Erro ao enviar email:', error);
-    return res.status(500).json({ success: false, error: 'Erro ao enviar email' });
+
+    return res.status(500).json({
+      success: false,
+      error: error?.message || 'Erro ao enviar email',
+    });
   }
 }

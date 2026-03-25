@@ -27,24 +27,62 @@ export default async function handler(req, res) {
 
     const { nome, email, assunto, mensagem } = body;
 
-    const result = await resend.emails.send({
+    if (!email) {
+      return res.status(400).json({
+        success: false,
+        error: 'E-mail do cliente não informado',
+      });
+    }
+
+    // 1) Email interno para BaldShield
+    await resend.emails.send({
       from: 'BaldShield <contato@baldshield.com>',
       to: 'contato@baldshield.com',
       subject: `Novo contato do site: ${assunto || 'Sem assunto'}`,
       html: `
-        <h2>Novo contato pelo site</h2>
-        <p><strong>Nome:</strong> ${nome || '-'}</p>
-        <p><strong>E-mail:</strong> ${email || '-'}</p>
-        <p><strong>Assunto:</strong> ${assunto || '-'}</p>
-        <p><strong>Mensagem:</strong></p>
-        <p>${mensagem || '-'}</p>
+        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111;">
+          <h2>Novo contato pelo site</h2>
+          <p><strong>Nome:</strong> ${nome || '-'}</p>
+          <p><strong>E-mail:</strong> ${email || '-'}</p>
+          <p><strong>Assunto:</strong> ${assunto || '-'}</p>
+          <p><strong>Mensagem:</strong></p>
+          <p>${mensagem || '-'}</p>
+        </div>
       `,
-      replyTo: email || undefined,
+      replyTo: email,
+    });
+
+    // 2) Auto-resposta para o cliente
+    await resend.emails.send({
+      from: 'BaldShield <contato@baldshield.com>',
+      to: email,
+      subject: 'Recebemos sua mensagem | BaldShield',
+      html: `
+        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111; max-width: 600px; margin: 0 auto;">
+          <h2 style="margin-bottom: 16px;">Olá${nome ? `, ${nome}` : ''}!</h2>
+
+          <p>Recebemos sua mensagem com sucesso e agradecemos seu contato com a <strong>BaldShield</strong>.</p>
+
+          <p>Nosso time vai analisar sua solicitação e retornar o mais breve possível.</p>
+
+          <div style="margin: 24px 0; padding: 16px; background: #f6f6f6; border-radius: 8px;">
+            <p style="margin: 0 0 8px 0;"><strong>Resumo da sua mensagem:</strong></p>
+            <p style="margin: 0;"><strong>Assunto:</strong> ${assunto || '-'}</p>
+            <p style="margin: 8px 0 0 0;"><strong>Mensagem:</strong> ${mensagem || '-'}</p>
+          </div>
+
+          <p>Seguimos à disposição.</p>
+
+          <p style="margin-top: 24px;">
+            <strong>BaldShield</strong><br />
+            Proteção solar feita para quem é careca
+          </p>
+        </div>
+      `,
     });
 
     return res.status(200).json({
       success: true,
-      result,
     });
   } catch (error) {
     console.error('Erro ao enviar email:', error);

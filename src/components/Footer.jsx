@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-4 mb-4">
               <img
-                src="/Logo%20solo.png"
+                src="/escudo.png"
                 alt="Logo da BaldShield"
                 className="w-14 h-14 object-contain"
               />

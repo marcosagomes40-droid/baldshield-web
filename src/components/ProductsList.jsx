@@ -80,12 +80,16 @@ const ProductsList = () => {
           </div>
 
           <div className="flex justify-center">
-            <img
+            <motion.img
               src="/produto1.png"
               alt="Produto BaldShield"
-              className="w-44 md:w-60 object-contain opacity-95"
+              className="w-64 md:w-80 lg:w-96 object-contain drop-shadow-2xl"
+              initial={{ opacity: 0, y: 30, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+              whileHover={{ scale: 1.03 }}
             />
-          </div>
+        </div>
         </motion.div>
       </div>
 

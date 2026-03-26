@@ -58,7 +58,7 @@ export default async function handler(req, res) {
     let autoReplyError = null;
 
     // =============================
-    // AUTO-RESPOSTA COM LOGO
+    // AUTO-RESPOSTA PREMIUM (ESCUDO)
     // =============================
     try {
       autoReplyResult = await resend.emails.send({
@@ -69,17 +69,21 @@ export default async function handler(req, res) {
           <div style="background:#0b0b0b; padding:40px 20px; font-family: Arial, sans-serif;">
             <div style="max-width:600px; margin:0 auto; background:#111; border-radius:12px; overflow:hidden; border:1px solid #222;">
 
-              <!-- HEADER COM LOGO -->
-              <div style="padding:24px; text-align:center; border-bottom:1px solid #222;">
+              <!-- HEADER PREMIUM -->
+              <div style="padding:28px 24px; text-align:center; border-bottom:1px solid #222;">
                 
                 <img 
-                  src="https://www.baldshield.com/logo.png"
+                  src="https://baldshield.com/escudo.png"
                   alt="BaldShield"
-                  width="140"
-                  style="display:block; margin:0 auto 12px auto;"
+                  width="70"
+                  style="display:block; margin:0 auto 16px auto;"
                 />
 
-                <p style="color:#888; margin:0; font-size:12px;">
+                <h1 style="margin:0; color:#ffffff; font-size:18px; letter-spacing:1px;">
+                  BALDSHIELD
+                </h1>
+
+                <p style="color:#888; margin:6px 0 0 0; font-size:12px;">
                   Proteção solar feita para quem é careca
                 </p>
 

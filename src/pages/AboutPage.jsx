@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '@/components/Header.jsx';
-import Footer from '@/components/Footer.jsx';
+import Header from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
 
 const AboutPage = () => {
   return (
@@ -8,7 +8,6 @@ const AboutPage = () => {
       <Header />
 
       <main>
-        {/* Hero */}
         <section className="relative py-24 px-6 md:px-12 border-b border-white/10">
           <div className="max-w-6xl mx-auto">
             <p className="text-orange-500 uppercase tracking-[0.25em] text-sm mb-6">
@@ -26,7 +25,6 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* Bloco 1 */}
         <section className="py-20 px-6 md:px-12">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
             <div>
@@ -53,7 +51,6 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* Bloco 2 */}
         <section className="py-20 px-6 md:px-12 bg-white/[0.03]">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
             <div>
@@ -80,7 +77,6 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* Cards */}
         <section className="py-20 px-6 md:px-12">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-3 gap-6">
@@ -110,7 +106,6 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* Fechamento */}
         <section className="py-24 px-6 md:px-12 border-t border-white/10">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-orange-500 uppercase tracking-[0.25em] text-sm mb-6">

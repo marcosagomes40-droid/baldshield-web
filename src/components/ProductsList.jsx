@@ -81,7 +81,7 @@ const ProductsList = () => {
 
           <div className="flex justify-center">
             <img
-              src="/Logo%20transparente.png"
+              src="/logo.png"
               alt="Produto BaldShield"
               className="w-44 md:w-60 object-contain opacity-95"
             />

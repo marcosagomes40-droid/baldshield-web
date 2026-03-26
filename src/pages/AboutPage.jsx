@@ -32,8 +32,10 @@ const AboutPage = () => {
               <p className="text-orange-500 uppercase tracking-[0.2em] text-sm mb-4">
                 O problema
               </p>
-              <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-                Ninguém fala sobre isso. Mas todo careca sente.
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.05] mb-6">
+                Mais do que proteção solar.<br />
+                Uma nova categoria de cuidado<br />
+                para homens carecas.
               </h2>
             </div>
 

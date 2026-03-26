@@ -15,11 +15,12 @@ const Header = () => {
   const itemCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   const navLinks = [
-    { name: 'Início', path: '/' },
-    { name: 'Produtos', path: '/products' },
-    { name: 'Benefícios', path: '/benefits' },
-    { name: 'Contato', path: '/contact' },
-  ];
+  { name: 'Início', path: '/' },
+  { name: 'Produtos', path: '/products' },
+  { name: 'Benefícios', path: '/benefits' },
+  { name: 'Por que existimos', path: '/about' },
+  { name: 'Contato', path: '/contact' },
+];
 
   const isActive = (path) => location.pathname === path;
 

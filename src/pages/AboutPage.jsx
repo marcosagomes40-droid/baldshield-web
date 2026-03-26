@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 
@@ -106,21 +107,28 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <section className="py-24 px-6 md:px-12 border-t border-white/10">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-orange-500 uppercase tracking-[0.25em] text-sm mb-6">
-              BaldShield
-            </p>
+     <section className="py-24 px-6 md:px-12 border-t border-white/10">
+      <div className="max-w-4xl mx-auto text-center">
+        <p className="text-primary uppercase tracking-[0.3em] text-lg md:text-xl font-semibold mb-6">
+          BALDSHIELD
+        </p>
 
-            <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
-              Mais do que proteção solar. Um novo cuidado para quem nunca teve um produto pensado para isso.
-            </h2>
+        <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
+          Mais do que proteção solar. Uma nova categoria de cuidado para homens carecas.
+        </h2>
 
-            <p className="text-white/75 text-lg leading-relaxed">
-              BaldShield é para quem quer viver o sol com mais segurança, mais conforto e mais confiança.
-            </p>
-          </div>
-        </section>
+        <p className="text-white/75 text-lg leading-relaxed mb-10">
+        Criamos a BaldShield para transformar uma necessidade ignorada em proteção, confiança e cuidado real.
+        </p>
+
+        <Link
+          to="/products"
+          className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200"
+        >
+          Quero ser avisado
+      </Link>
+    </div>
+  </section>
       </main>
 
       <Footer />

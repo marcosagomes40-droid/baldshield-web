@@ -108,16 +108,16 @@ const AboutPage = () => {
         </section>
 
      <section className="py-24 px-6 md:px-12 border-t border-white/10">
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-3xl mx-auto text-center">
         <p className="text-primary uppercase tracking-[0.3em] text-lg md:text-xl font-semibold mb-6">
           BALDSHIELD
         </p>
 
-        <h2 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
+        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.05] mb-6">
           Mais do que proteção solar. Uma nova categoria de cuidado para homens carecas.
         </h2>
 
-        <p className="text-white/75 text-lg leading-relaxed mb-10">
+        <p className="text-white/75 text-lg leading-relaxed mb-12">
         Criamos a BaldShield para transformar uma necessidade ignorada em proteção, confiança e cuidado real.
         </p>
 

@@ -7,6 +7,7 @@ import ProductDetailPage from './pages/ProductDetailPage.jsx';
 import BenefitsPage from './pages/BenefitsPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
 import SuccessPage from './pages/SuccessPage.jsx';
+import AboutPage from './pages/AboutPage.jsx';
 import { Toaster } from '@/components/ui/toaster';
 import { CartProvider } from '@/hooks/useCart.jsx';
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/benefits" element={<BenefitsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/success" element={<SuccessPage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route
             path="*"
             element={

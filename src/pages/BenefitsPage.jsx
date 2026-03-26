@@ -2,10 +2,10 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { motion } from 'framer-motion';
 import { Shield, Droplet, Sparkles, Award, Heart } from 'lucide-react';
-import Header from '@/components/Header.jsx';
-import Footer from '@/components/Footer.jsx';
-import BenefitCard from '@/components/BenefitCard.jsx';
-import CTASection from '@/components/CTASection.jsx';
+import Header from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
+import BenefitCard from '../components/BenefitCard.jsx';
+import CTASection from '../components/CTASection.jsx';
 
 const BenefitsPage = () => {
   const benefits = [
@@ -55,7 +55,6 @@ const BenefitsPage = () => {
       <div className="min-h-screen bg-black">
         <Header />
 
-        {/* Hero */}
         <section className="py-20 bg-gradient-to-b from-black to-card">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -84,7 +83,6 @@ const BenefitsPage = () => {
           </div>
         </section>
 
-        {/* Grid */}
         <section className="py-20 bg-card">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4 mb-8">
@@ -110,7 +108,6 @@ const BenefitsPage = () => {
           </div>
         </section>
 
-        {/* Stats */}
         <section className="py-20 bg-gradient-to-b from-card to-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12">

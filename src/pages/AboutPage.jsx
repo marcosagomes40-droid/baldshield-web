@@ -32,7 +32,7 @@ const AboutPage = () => {
               <p className="text-orange-500 uppercase tracking-[0.2em] text-sm mb-4">
                 O problema
               </p>
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.05] mb-6">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight md:leading-[1.05] mb-6">
                 Mais do que proteção solar.<br />
                 Uma nova categoria de cuidado<br />
                 para homens carecas.

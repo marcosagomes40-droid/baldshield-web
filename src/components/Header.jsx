@@ -30,13 +30,8 @@ const Header = () => {
           <div className="flex items-center justify-between h-24">
             
             {/* Logo */}
-            <Link to="/" className="flex items-center group py-2">
-              <img
-                src="https://horizons-cdn.hostinger.com/0dff2f89-11ee-409c-8d36-778d795a7ee2/03fdbaa1ddb7eb55c809079def39aafb.png"
-                alt="BaldShield Logo"
-                className="h-20 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
-              />
-            </Link>
+            <img
+            src="/logo.png"
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">

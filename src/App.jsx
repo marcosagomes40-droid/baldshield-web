@@ -24,15 +24,26 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/success" element={<SuccessPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="*" element={
-            <div className="min-h-screen bg-black flex items-center justify-center px-4">
-              <div className="text-center">
-                <h1 className="text-6xl font-bold text-primary mb-4" style={{ fontFamily: 'Playfair Display, serif' }}>404</h1>
-                <p className="text-xl text-secondary mb-8">Page not found</p>
-                <a href="/" className="text-primary hover:text-primary/80 underline">Back to home</a>
+
+          <Route
+            path="*"
+            element={
+              <div className="min-h-screen bg-black flex items-center justify-center px-4">
+                <div className="text-center">
+                  <h1
+                    className="text-6xl font-bold text-primary mb-4"
+                    style={{ fontFamily: 'Playfair Display, serif' }}
+                  >
+                    404
+                  </h1>
+                  <p className="text-xl text-secondary mb-8">Page not found</p>
+                  <a href="/" className="text-primary hover:text-primary/80 underline">
+                    Back to home
+                  </a>
+                </div>
               </div>
-            </div>
-          } />
+            }
+          />
         </Routes>
         <Toaster />
       </Router>

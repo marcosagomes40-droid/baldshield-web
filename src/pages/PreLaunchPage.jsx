@@ -37,13 +37,11 @@ const PreLaunchPage = () => {
               </p>
 
               <h1 className="mb-6 text-5xl font-bold leading-tight md:text-6xl">
-                O problema não é ser careca.
-                <span className="block text-primary">É o brilho.</span>
+              Controle de brilho para quem é careca.
               </h1>
 
               <p className="mb-8 max-w-xl text-lg text-gray-300 md:text-xl">
-                Estamos preparando uma nova solução da BaldShield para quem quer
-                mais controle, praticidade e confiança no dia a dia.
+              Uma solução simples, rápida e discreta para o seu dia a dia.
               </p>
 
               <div className="mb-10 flex flex-wrap gap-4">

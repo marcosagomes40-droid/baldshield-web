@@ -42,15 +42,16 @@ const PreLaunchPage = () => {
               </h1>
 
               <p className="mb-8 max-w-xl text-lg text-gray-300 md:text-xl">
-                Se você é careca, você sabe exatamente do que estamos falando.
+                Estamos preparando uma nova solução da BaldShield para quem quer
+                mais controle, praticidade e confiança no dia a dia.
               </p>
 
-              <div className="mb-3 flex flex-wrap gap-4">
+              <div className="mb-10 flex flex-wrap gap-4">
                 <a
                   href="#lista"
                   className="rounded-2xl bg-primary px-8 py-4 font-semibold text-black transition hover:scale-105"
                 >
-                  Quero acesso antecipado
+                  Quero ser avisado
                 </a>
 
                 <a
@@ -60,10 +61,6 @@ const PreLaunchPage = () => {
                   Entender mais
                 </a>
               </div>
-
-              <p className="mb-10 text-sm text-gray-400">
-                Vagas limitadas para os primeiros testes.
-              </p>
 
               <div className="grid max-w-xl gap-4 sm:grid-cols-3">
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
@@ -90,7 +87,7 @@ const PreLaunchPage = () => {
             >
               <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-2xl">
                 <img
-                  src="/hero-premium.png"
+                  src="/BaldWipespre32.png"
                   alt="Pré-lançamento BaldShield"
                   className="w-full h-full object-cover"
                 />
@@ -173,9 +170,3 @@ const PreLaunchPage = () => {
         </section>
 
         <Footer />
-      </div>
-    </>
-  );
-};
-
-export default PreLaunchPage;

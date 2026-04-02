@@ -67,10 +67,12 @@ const PreLaunchPage = () => {
                   <p className="text-sm text-gray-400">Feito para</p>
                   <p className="mt-1 font-semibold">couro cabeludo</p>
                 </div>
+
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                   <p className="text-sm text-gray-400">Uso</p>
                   <p className="mt-1 font-semibold">rápido e prático</p>
                 </div>
+
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                   <p className="text-sm text-gray-400">Acesso</p>
                   <p className="mt-1 font-semibold">antes do lançamento</p>
@@ -170,3 +172,9 @@ const PreLaunchPage = () => {
         </section>
 
         <Footer />
+      </div>
+    </>
+  );
+};
+
+export default PreLaunchPage;

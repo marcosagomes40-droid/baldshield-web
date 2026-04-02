@@ -24,6 +24,7 @@ const PreLaunchPage = () => {
       <div className="min-h-screen bg-black text-white">
         <Header />
 
+        {/* HERO */}
         <section className="relative overflow-hidden bg-gradient-to-b from-black to-card px-6 py-20 md:px-12 lg:px-20">
           <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
             <motion.div
@@ -37,19 +38,19 @@ const PreLaunchPage = () => {
               </p>
 
               <h1 className="mb-6 text-5xl font-bold leading-tight md:text-6xl">
-              Controle de brilho para quem é careca.
+                Controle de brilho para quem é careca.
               </h1>
 
               <p className="mb-8 max-w-xl text-lg text-gray-300 md:text-xl">
-              Uma solução simples, rápida e discreta para o seu dia a dia.
+                Uma solução simples, rápida e discreta para o seu dia a dia.
               </p>
 
-              <div className="mb-10 flex flex-wrap gap-4">
+              <div className="mb-6 flex flex-wrap gap-4">
                 <a
                   href="#lista"
                   className="rounded-2xl bg-primary px-8 py-4 font-semibold text-black transition hover:scale-105"
                 >
-                  Quero ser avisado
+                  Quero acesso antecipado
                 </a>
 
                 <a
@@ -59,6 +60,11 @@ const PreLaunchPage = () => {
                   Entender mais
                 </a>
               </div>
+
+              {/* 🔥 ESCASSEZ */}
+              <p className="mb-10 text-sm text-gray-400">
+                Vagas limitadas para os primeiros testes.
+              </p>
 
               <div className="grid max-w-xl gap-4 sm:grid-cols-3">
                 <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
@@ -96,6 +102,7 @@ const PreLaunchPage = () => {
           </div>
         </section>
 
+        {/* PROBLEMA */}
         <section id="problema" className="bg-black px-6 py-20 md:px-12 lg:px-20">
           <div className="mx-auto max-w-6xl">
             <motion.div
@@ -104,10 +111,12 @@ const PreLaunchPage = () => {
               whileInView="visible"
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="text-center"
             >
               <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-primary">
                 Se você é careca, você sabe
               </p>
+
               <h2 className="mb-10 text-4xl font-bold md:text-5xl">
                 Existem situações que ninguém fala sobre isso.
               </h2>
@@ -136,14 +145,18 @@ const PreLaunchPage = () => {
           </div>
         </section>
 
+        {/* EM BREVE */}
         <section className="bg-gradient-to-b from-black to-card px-6 py-20 md:px-12 lg:px-20">
           <div className="mx-auto max-w-5xl rounded-[2rem] border border-white/10 bg-white/5 p-8 text-center md:p-12">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+            
+            <p className="mb-3 text-center text-sm font-semibold uppercase tracking-[0.25em] text-primary">
               Em breve
             </p>
+
             <h2 className="mb-6 text-4xl font-bold md:text-5xl">
               Uma solução simples para um problema ignorado.
             </h2>
+
             <p className="mx-auto max-w-3xl text-lg text-gray-300">
               Estamos finalizando os testes e preparando o lançamento.
               Entre para a lista e seja um dos primeiros a saber.
@@ -151,15 +164,20 @@ const PreLaunchPage = () => {
           </div>
         </section>
 
+        {/* LISTA */}
         <section id="lista" className="bg-black px-6 py-20 md:px-12 lg:px-20">
           <div className="mx-auto max-w-4xl rounded-[2rem] border border-primary/20 bg-card p-8 shadow-2xl md:p-12">
+            
             <div className="mb-8 text-center">
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-primary">
+
+              <p className="mb-3 text-center text-sm font-semibold uppercase tracking-[0.25em] text-primary">
                 Lista de espera
               </p>
+
               <h2 className="mb-4 text-4xl font-bold md:text-5xl">
                 Quero ser um dos primeiros
               </h2>
+
               <p className="text-gray-300">
                 Preencha abaixo para receber novidades, prioridade e acesso ao lançamento.
               </p>
